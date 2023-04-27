@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drawing App Example</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <canvas id="myCanvas"></canvas>
+    
+    <div class="color-selector">
+      <a class="color-1" value="#ff0000"></a>
+      <a class="color-2"></a>
+      <a class="color-3"></a>
+      <a class="color-4"></a>
+      <a class="color-5"></a>
+
+      <input type="color" />
+
+      <button class="buttons" id="clear-btn">Clear</button>
+      <button class="buttons" id="undo-btn">Undo</button>
+      <button class="buttons" id="download-btn">Download</button>
+
+      <input class="radio" type="radio" value="round"><label>round</label>
+      <input class="radio" type="radio" value="square"><label>square</label>
+
+      <button class="grey stroke-weight">1</button>
+      <button class="grey stroke-weight">10</button>
+      <button class="grey stroke-weight">15</button>
+      <button class="grey stroke-weight">20</button>
+
+      <input type="range" min="1" max="100" id="size-slider">
+    </div>
+   
+    <script src="./assets/js/draw.js"></script>
+  </body>
+</html>

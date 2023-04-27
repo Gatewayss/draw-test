@@ -1,0 +1,62 @@
+/* Color selector container */
+.color-selector {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 99%;
+    height: 6em;
+   background-color: black;
+    border-radius: 25px;
+    flex-wrap: wrap;
+  }
+  
+  /* Individual color options */
+  .color-selector a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .color-1 {
+    background-color: #ff0000;
+  }
+  
+  .color-2 {
+    background-color: #00ff00;
+  }
+  
+  .color-3 {
+    background-color: #0000ff;
+  }
+  
+  .color-4 {
+    background-color: #ffff00;
+  }
+  
+  .color-5 {
+    background-color: #ff00ff;
+  }
+  
+  .grey {
+    background-color: rgb(195, 190, 190);
+  }
+  
+  body {
+    background-color: black;
+  }
+
+  #myCanvas {
+    background-color: #fff;
+   
+  }
+
+  label {
+    color: white;
+  }

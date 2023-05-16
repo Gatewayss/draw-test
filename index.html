@@ -28,34 +28,34 @@
         color: white;
       }
       select {
-        background-color: #ffffff; 
-        color: #000000; 
-        border: 1px solid #cccccc; 
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #cccccc;
         padding: 5px;
         border-radius: 5px;
         font-size: 16px;
       }
       select:hover {
-        background-color: #f2f2f2; 
+        background-color: #f2f2f2;
       }
       select:focus {
         outline: none;
-        border-color: #999999; 
+        border-color: #999999;
       }
       button {
-        background-color: #ffffff; 
-        color: #000000; 
-        border: 1px solid #cccccc; 
+        background-color: #ffffff;
+        color: #000000;
+        border: 1px solid #cccccc;
         padding: 5px;
         border-radius: 5px;
         font-size: 16px;
       }
       button:hover {
-        background-color: #f2f2f2; 
+        background-color: #f2f2f2;
       }
       button:focus {
         outline: none;
-        border-color: #999999; 
+        border-color: #999999;
       }
       .color-swatch {
         height: 2em;
@@ -83,8 +83,9 @@
       <option value="round">Round</option>
       <option value="square">Square</option>
     </select>
-    <button id="erase">Erase</button>
+    <button id="erase" style="background-color: #ffffff" value="#ffffff">Erase</button>
     <button id="erase-all">Erase All</button>
+    <button id="undo">Undo</button>
 
     <button
       type="button"
@@ -117,7 +118,11 @@
                 <!-- <label for="recipient-name" class="col-form-label"
                   >Title:</label
                 > -->
-                <input type="text" class="form-control" id="file-name" placeholder="Enter file name" />
+                <input
+                  type="text"
+                  class="form-control"
+                  id="file-name"
+                  placeholder="Enter file name" />
               </div>
             </form>
           </div>
@@ -128,7 +133,9 @@
               data-bs-dismiss="modal">
               Close
             </button>
-            <button id="download-btn" type="button" class="btn btn-primary">Download</button>
+            <button id="download-btn" type="button" class="btn btn-primary">
+              Download
+            </button>
           </div>
         </div>
       </div>

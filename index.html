@@ -1,36 +1,146 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>Drawing App Example</title>
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"></script>
+    <title>Mixer Canvas Demo</title>
+    <style>
+      canvas {
+        border: 1px solid black;
+        border-radius: 20px;
+        background-color: white;
+      }
+      body {
+        background-color: rgb(180, 180, 239);
+      }
+      h1 {
+        text-align: center;
+        color: white;
+      }
+      select {
+        background-color: #ffffff; 
+        color: #000000; 
+        border: 1px solid #cccccc; 
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      select:hover {
+        background-color: #f2f2f2; 
+      }
+      select:focus {
+        outline: none;
+        border-color: #999999; 
+      }
+      button {
+        background-color: #ffffff; 
+        color: #000000; 
+        border: 1px solid #cccccc; 
+        padding: 5px;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      button:hover {
+        background-color: #f2f2f2; 
+      }
+      button:focus {
+        outline: none;
+        border-color: #999999; 
+      }
+      .color-swatch {
+        height: 2em;
+        width: 2em;
+        border-radius: 10px;
+      }
+    </style>
   </head>
   <body>
-    <canvas id="myCanvas"></canvas>
-    
-    <div class="color-selector">
-      <a class="color-1" value="#ff0000"></a>
-      <a class="color-2"></a>
-      <a class="color-3"></a>
-      <a class="color-4"></a>
-      <a class="color-5"></a>
+    <h1>Painting App</h1>
 
-      <input type="color" />
+    <ul id="color-palette">
+      <input type="color" id="color" />
+      <button class="color-swatch" style="background-color: #000000"></button>
+      <button class="color-swatch" style="background-color: #ff0000"></button>
+      <button class="color-swatch" style="background-color: #00ff00"></button>
+      <button class="color-swatch" style="background-color: #0000ff"></button>
+      <button class="color-swatch" style="background-color: #ffff00"></button>
+    </ul>
 
-      <button class="buttons" id="clear-btn">Clear</button>
-      <button class="buttons" id="undo-btn">Undo</button>
-      <button class="buttons" id="download-btn">Download</button>
+    <label for="size">Size:</label>
+    <input type="range" id="size" min="1" max="50" value="10" />
+    <label for="shape">Shape:</label>
+    <select id="shape">
+      <option value="round">Round</option>
+      <option value="square">Square</option>
+    </select>
+    <button id="erase">Erase</button>
+    <button id="erase-all">Erase All</button>
 
-      <input class="radio" type="radio" value="round"><label>round</label>
-      <input class="radio" type="radio" value="square"><label>square</label>
+    <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#exampleModal"
+      data-bs-whatever="@mdo">
+      Download
+    </button>
 
-      <button class="grey stroke-weight">1</button>
-      <button class="grey stroke-weight">10</button>
-      <button class="grey stroke-weight">15</button>
-      <button class="grey stroke-weight">20</button>
-
-      <input type="range" min="1" max="100" id="size-slider">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">File Name:</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <!-- <label for="recipient-name" class="col-form-label"
+                  >Title:</label
+                > -->
+                <input type="text" class="form-control" id="file-name" placeholder="Enter file name" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal">
+              Close
+            </button>
+            <button id="download-btn" type="button" class="btn btn-primary">Download</button>
+          </div>
+        </div>
+      </div>
     </div>
-   
-    <script src="./assets/js/draw.js"></script>
+
+    <!-- <form type="submit">
+      <button type="submit" id="download-btn">Download</button>
+      <label id="file-name">Title:</label>
+      <input required />
+    </form> -->
+    <canvas id="canvas" width="800" height="500"></canvas>
+
+    <script src="/assets/js/draw.js"></script>
   </body>
 </html>

@@ -81,21 +81,13 @@ eraseButton.addEventListener('click', () => {
 // Set event listener for erase all button
 eraseAllButton.addEventListener('click', () => {
     context.clearRect(0, 0, canvas.width, canvas.height);
-    eraseButtonFunction();
+    // eraseButtonFunction();
     clearSavedElements();
 });
 
-// TODO: It only saves the lines but not the white background so the images are transparent.
-// downloadBtn.addEventListener('click', () => {
-//     const link = document.createElement('a');
-//     const newName = fileName.value + '.png';
-//     link.download = newName;
-//     link.href = canvas.toDataURL('image/png');
-//     link.click();
-// });
 downloadBtn.addEventListener('click', () => {
     const link = document.createElement('a');
-    const newName = fileName.value + '.png';
+    const newFileName = fileName.value + '.png';
 
     const downloadCanvas = document.createElement('canvas');
     const downloadContext = downloadCanvas.getContext('2d');
@@ -111,7 +103,7 @@ downloadBtn.addEventListener('click', () => {
     // Draw the existing canvas onto the download canvas
     downloadContext.drawImage(canvas, 0, 0);
 
-    link.download = newName;
+    link.download = newFileName;
     link.href = downloadCanvas.toDataURL('image/png');
     link.click();
 });
@@ -161,7 +153,6 @@ function draw(e) {
     if (!isDrawing) return;
 
     if (eraser) {
-        // context.globalCompositeOperation = 'destination-out';
         context.globalCompositeOperation = 'source-over';
         context.strokeStyle = '#ffffff';
         context.lineWidth = size;
